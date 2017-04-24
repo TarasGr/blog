@@ -3,21 +3,10 @@ angular.module('todoApp', []).controller('TodoListController', function ($http) 
 
     todoList.todos = [];
 
-//    todoList.page = 1;
-//    todoList.MorePage = true;
-
     todoList.ListAction = function () {
         $http.get('/list', {
-//            params: {
-//                page: todoList.page
-//            }
         }).then(function (response) {
-//            if (response.data.data.length == 0) {
-//                alert(response.data.data.length)
-//                todoList.MorePage = false;
-//            }
             todoList.todos = response.data;
-//            todoList.page++;
         }, function (response) {
         });
     };
